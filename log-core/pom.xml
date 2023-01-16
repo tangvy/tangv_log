@@ -11,7 +11,7 @@
 
     <groupId>com.tangv.tangv_log</groupId>
     <artifactId>log-core</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -35,5 +35,6 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
+
     </dependencies>
 </project>

@@ -5,6 +5,7 @@
 package com.tangv.mdctrace.config;
 
 import com.tangv.mdctrace.interceptor.MdcTraceInterceptor;
+import com.tangv.mdctrace.interceptor.RequestLogInterceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -24,12 +25,19 @@ import javax.servlet.http.HttpServlet;
 public class WebmvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(handlerInterceptor());
+        registry.addInterceptor(mdcTraceInterceptor());
+        registry.addInterceptor(requestLogInterceptor());
     }
 
     @Bean
     @ConditionalOnMissingBean
-    public MdcTraceInterceptor handlerInterceptor() {
+    public MdcTraceInterceptor mdcTraceInterceptor() {
         return new MdcTraceInterceptor();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public RequestLogInterceptor requestLogInterceptor() {
+        return new RequestLogInterceptor();
     }
 }

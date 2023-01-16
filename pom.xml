@@ -33,6 +33,7 @@
         <transmittable-thread-local.version>2.12.1</transmittable-thread-local.version>-->
         <hutool.version>5.8.3</hutool.version>
         <junit.version>4.13.2</junit.version>
+        <fastjson.version>2.0.23</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -65,7 +66,19 @@
                 <artifactId>log-plugin-mdctrace-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!--<distributionManagement>
+        <repository>
+            <id>tang-repositry</id>
+            <url>/Users/tangwei/.m2/repository</url>
+        </repository>
+    </distributionManagement>-->
 
 </project>

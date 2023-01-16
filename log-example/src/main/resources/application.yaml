@@ -1,2 +1,10 @@
+
 server:
   port: 9001
+#logging:
+  #file:
+    #name: /Users/tangwei/logs/example.log
+    #path: /Users/tangwei/logs
+spring:
+  application:
+    name: log-example

@@ -15,6 +15,6 @@ import org.springframework.web.servlet.DispatcherServlet;
  */
 @ConditionalOnClass(DispatcherServlet.class)
 @AutoConfigureBefore(WebmvcConfiguration.class)
-@Import(WebmvcConfiguration.class)
+@Import({WebmvcConfiguration.class, TtlConfiguration.class})
 public class MdcTraceWebAutoConfiguration {
 }
